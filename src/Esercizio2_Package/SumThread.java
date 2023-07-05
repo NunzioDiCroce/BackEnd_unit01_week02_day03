@@ -15,15 +15,10 @@ public class SumThread implements Runnable {
 
 	@Override
 	public void run() {
-		sum = calculateSum();
-	}
-
-	private int calculateSum() {
-		int sum = 0;
+		sum = 0;
 		for (Integer number : numbersArray) {
 			sum += number;
 		}
-		return sum;
 	}
 
 	public int getSum() {
