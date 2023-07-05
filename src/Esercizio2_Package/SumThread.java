@@ -15,12 +15,19 @@ public class SumThread implements Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		sum = 0;
+		sum = calculateSum();
+	}
+
+	private int calculateSum() {
+		int sum = 0;
 		for (Integer number : numbersArray) {
 			sum += number;
 		}
+		return sum;
+	}
 
+	public int getSum() {
+		return sum;
 	}
 
 }

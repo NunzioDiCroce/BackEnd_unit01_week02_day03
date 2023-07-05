@@ -10,7 +10,7 @@ public class Esercizio2_Main {
 	public static void main(String[] args) {
 
 		System.out.println("");
-		System.out.println("- - - - - - - - - - ESERCIZIO 2 - - - - - - - - - -");
+		System.out.println("- - - - - - - - - - ESERCIZIO 1 - - - - - - - - - -");
 		System.out.println("");
 
 		List<Integer> numbersArray = generateArray();
@@ -29,12 +29,19 @@ public class Esercizio2_Main {
 		threadTwo.start();
 		threadThree.start();
 
-		System.out.println("");
-		System.out.println("- - - - - - - - - - ESERCIZIO 1 - - - - - - - - - -");
-		System.out.println("");
+		try {
+			threadOne.join();
+			threadTwo.join();
+			threadThree.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
-		threadOne.start();
-		threadTwo.start();
+		int sum = firstThread.getSum() + secondThread.getSum() + thirdThread.getSum();
+		System.out.println("firstThread sum: " + firstThread.getSum());
+		System.out.println("secondThread sum: " + secondThread.getSum());
+		System.out.println("thirdThread sum: " + thirdThread.getSum());
+		System.out.println("total sum: " + sum);
 
 	}
 
