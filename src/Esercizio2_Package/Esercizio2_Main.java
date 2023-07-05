@@ -38,6 +38,7 @@ public class Esercizio2_Main {
 		}
 
 		int sum = firstThread.getSum() + secondThread.getSum() + thirdThread.getSum();
+		System.out.println("");
 		System.out.println("firstThread sum: " + firstThread.getSum());
 		System.out.println("secondThread sum: " + secondThread.getSum());
 		System.out.println("thirdThread sum: " + thirdThread.getSum());
