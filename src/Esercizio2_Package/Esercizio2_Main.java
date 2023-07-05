@@ -10,7 +10,7 @@ public class Esercizio2_Main {
 	public static void main(String[] args) {
 
 		System.out.println("");
-		System.out.println("- - - - - - - - - - ESERCIZIO 1 - - - - - - - - - -");
+		System.out.println("- - - - - - - - - - ESERCIZIO 2 - - - - - - - - - -");
 		System.out.println("");
 
 		List<Integer> numbersArray = generateArray();
