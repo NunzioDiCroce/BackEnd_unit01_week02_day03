@@ -13,6 +13,10 @@ public class Esercizio1_Main {
 		Thread threadOne = new Thread(firstThread);
 		Thread threadTwo = new Thread(secondThread);
 
+		System.out.println("");
+		System.out.println("- - - - - - - - - - ESERCIZIO 1 - - - - - - - - - -");
+		System.out.println("");
+
 		threadOne.start();
 		threadTwo.start();
 
