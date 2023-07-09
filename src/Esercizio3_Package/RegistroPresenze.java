@@ -1,10 +1,6 @@
 package Esercizio3_Package;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
-
-import org.apache.commons.io.FileUtils;
 
 public class RegistroPresenze {
 
@@ -27,25 +23,9 @@ public class RegistroPresenze {
 
 		System.out.println("");
 		System.out.println("Il registro presenze è stato salvato nel file presenze.txt, verificarne il contenuto");
-		// scriviFile();
 
 	}
 
 	// Mario Rossi@5#Paolo Bianchi@4#Antonio Antani@5#Giovanni Gianni@4
-
-	public static void scriviFile(HashMap _presenze) {
-
-		while (_presenze.size() != 0) {
-			String presenzeString = _presenze.get(_presenze) + "@" + _presenze.values() + "#";
-		}
-
-		File file = new File("presenze.txt");
-		try {
-			FileUtils.writeStringToFile(file, "pippo", "UTF-8");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
 }
