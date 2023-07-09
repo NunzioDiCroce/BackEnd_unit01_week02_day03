@@ -14,10 +14,10 @@ public class RegistroPresenze {
 		HashMap<String, Integer> presenze = new HashMap<>();
 
 		// - - - - - - - - - - - - - - - - - - - - HashMap object population
-		presenze.put("Mario", 5);
-		presenze.put("Paolo", 4);
-		presenze.put("Antonio", 5);
-		presenze.put("Giovanni", 4);
+		presenze.put("Mario Rossi", 5);
+		presenze.put("Paolo Bianchi ", 4);
+		presenze.put("Antonio Antani", 5);
+		presenze.put("Giovanni Gianni", 4);
 
 		System.out.println("");
 		System.out.println("- - - - - - - - - - ESERCIZIO 3 - - - - - - - - - -");
@@ -27,11 +27,18 @@ public class RegistroPresenze {
 
 		System.out.println("");
 		System.out.println("Il registro presenze è stato salvato nel file presenze.txt, verificarne il contenuto");
-		scriviFile();
+		// scriviFile();
 
 	}
 
-	public static void scriviFile() {
+	// Mario Rossi@5#Paolo Bianchi@4#Antonio Antani@5#Giovanni Gianni@4
+
+	public static void scriviFile(HashMap _presenze) {
+
+		while (_presenze.size() != 0) {
+			String presenzeString = _presenze.get(_presenze) + "@" + _presenze.values() + "#";
+		}
+
 		File file = new File("presenze.txt");
 		try {
 			FileUtils.writeStringToFile(file, "pippo", "UTF-8");
