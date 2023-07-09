@@ -28,4 +28,13 @@ public class RegistroPresenze {
 
 	// Mario Rossi@5#Paolo Bianchi@4#Antonio Antani@5#Giovanni Gianni@4
 
+	public static void scriviFile(HashMap<String, Integer> _presenze) {
+
+		StringBuilder trasformaInString = new StringBuilder();
+
+		_presenze.forEach((_chiave, _valore) -> {
+			trasformaInString.append(_chiave).append("@").append(_valore).append("#");
+		});
+
+	}
 }
