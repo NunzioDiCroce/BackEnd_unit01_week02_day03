@@ -36,7 +36,7 @@ public class RegistroPresenze {
 
 	}
 
-	// - - - - - - - - - - - - - - - - - - - - writeStringToFile
+	// - - - - - - - - - - - - - - - - - - - - FileUtils.writeStringToFile
 	public static void scriviFile(HashMap<String, Integer> _presenze) {
 
 		StringBuilder stringBuilder = new StringBuilder();
@@ -60,7 +60,7 @@ public class RegistroPresenze {
 
 	}
 
-	// - - - - - - - - - - - - - - - - - - - - readFileToSTring
+	// - - - - - - - - - - - - - - - - - - - - FileUtils.readFileToString
 	public static HashMap<String, Integer> leggiFile() {
 
 		HashMap<String, Integer> presenzeDue = new HashMap<>();
