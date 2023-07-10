@@ -1,6 +1,10 @@
 package Esercizio3_Package;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
+
+import org.apache.commons.io.FileUtils;
 
 public class RegistroPresenze {
 
@@ -11,7 +15,7 @@ public class RegistroPresenze {
 
 		// - - - - - - - - - - - - - - - - - - - - HashMap object population
 		presenze.put("Mario Rossi", 5);
-		presenze.put("Paolo Bianchi ", 4);
+		presenze.put("Paolo Bianchi", 4);
 		presenze.put("Antonio Antani", 5);
 		presenze.put("Giovanni Gianni", 4);
 
@@ -23,6 +27,7 @@ public class RegistroPresenze {
 
 		System.out.println("");
 		System.out.println("Il registro presenze è stato salvato nel file presenze.txt, verificarne il contenuto");
+		scriviFile(presenze);
 
 	}
 
@@ -30,11 +35,23 @@ public class RegistroPresenze {
 
 	public static void scriviFile(HashMap<String, Integer> _presenze) {
 
-		StringBuilder trasformaInString = new StringBuilder();
+		StringBuilder stringBuilder = new StringBuilder();
 
 		_presenze.forEach((_chiave, _valore) -> {
-			trasformaInString.append(_chiave).append("@").append(_valore).append("#");
+			stringBuilder.append(_chiave).append("@").append(_valore).append("#");
 		});
+
+		String presenzeString = stringBuilder.toString();
+
+		if (presenzeString.endsWith("#")) {
+			presenzeString = presenzeString.substring(0, presenzeString.length() - 1);
+		}
+
+		try {
+			FileUtils.writeStringToFile(new File("presenze.txt"), presenzeString, "UTF-8");
+		} catch (IOException _e) {
+			_e.printStackTrace();
+		}
 
 	}
 }
